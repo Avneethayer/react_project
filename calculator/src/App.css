@@ -1,6 +1,6 @@
 #calculator {
-    width: 300px;
-    height: 70vh;
+    width: 260px;
+    min-height: 80vh;
     background-color: #000;
     margin: 0 auto;
     margin-top: 5%;
@@ -11,10 +11,24 @@
 
 #display{
     color: #fff;
+    height: 85px;
+    margin: 2px;
     background-color: #333;
     border-radius: 10px;
 }
 
-#keypad{
+.btn{
+    background-color: #33006F;
+    width: 55px;
+    height: 60px;
+    margin: 5px;
+    border: none;
+    border-radius: 8px;
     color: #fff;
+}
+
+.btn:last-of-type{
+    background-color: #f00;
+    width:120px;
+    text-align: center;
 }
