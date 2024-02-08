@@ -1,8 +1,11 @@
-
-
+import Display from "./Display.jsx"
+import Keypad from "./Keypad.jsx"
 const Calculator = () => {
   return (
-    <div>Calculator</div>
+    <div id="calculator">
+        <Display/>
+        <Keypad/>
+    </div>
   )
 }
 
