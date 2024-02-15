@@ -47,19 +47,24 @@ const pizzaData = [
 ]
 
 function Header() {
-  return <h1>AK Pizzas</h1>
+  return <header>AK Pizzas</header>
 }
 
 function Menu() {
   return (
-    <div>
+    <menu>
       <h1>Our Menu</h1>
       <Pizza />
-    </div>
+    </menu>
   )
 }
 
 function Footer() {
+  const hour = new Date().getHours()
+  const openHour = 8
+  const closeHour = 21
+  const isOpen = hour >= openHour && hour <= closeHour
+  console.log(isOpen)
   return <footer>{new Date().toLocaleDateString()} We are open!</footer>
 }
 
