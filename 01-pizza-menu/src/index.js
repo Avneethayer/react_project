@@ -56,7 +56,7 @@ function Header() {
 }
 
 function Menu() {
-  const pizzas = []
+  const pizzas = pizzaData
   const pizzaNum = pizzas.length
   return (
     <main className="menu">
@@ -120,14 +120,16 @@ function Menu() {
 function Footer() {
   const hour = new Date().getHours()
   const openHour = 8
-  const closeHour = 21
+  const closeHour = 20
   const isOpen = hour >= openHour && hour <= closeHour
   console.log(isOpen)
   return (
     <footer className="footer">
       {/* {new Date().toLocaleDateString()} We are open! */}
       <div className="order">
-        {isOpen && `We are Open until ${closeHour}. Come visit us!`}
+        {isOpen
+          ? `We are Open until ${closeHour}.00. Come visit us!`
+          : `We are closed right now. Please come between ${openHour}.00 and ${closeHour}.00`}
         <button className="btn">Order</button>
       </div>
     </footer>
