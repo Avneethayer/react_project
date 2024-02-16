@@ -56,14 +56,18 @@ function Header() {
 }
 
 function Menu() {
+  const pizzas = []
+  const pizzaNum = pizzas.length
   return (
     <main className="menu">
+      {console.log(pizzaNum)}
       <h2>Our Menu</h2>
-      <ul className="pizzas">
-        {pizzaData.map((pizza) => (
-          <Pizza pizzaObj={pizza} key={pizza.name} />
-        ))}
-        {/* <Pizza
+      {pizzaNum > 0 && (
+        <ul className="pizzas">
+          {pizzaData.map((pizza) => (
+            <Pizza pizzaObj={pizza} key={pizza.name} />
+          ))}
+          {/* <Pizza
           name="Focaccia"
           ingredients="Bread with italian olive oil and rosemary"
           price={6}
@@ -107,7 +111,8 @@ function Menu() {
           photoName="pizzas/prosciutto.jpg"
           imageText="Pizza Prosciutto"
         /> */}
-      </ul>
+        </ul>
+      )}
     </main>
   )
 }
@@ -120,7 +125,11 @@ function Footer() {
   console.log(isOpen)
   return (
     <footer className="footer">
-      {new Date().toLocaleDateString()} We are open!
+      {/* {new Date().toLocaleDateString()} We are open! */}
+      <div className="order">
+        {isOpen && `We are Open until ${closeHour}. Come visit us!`}
+        <button className="btn">Order</button>
+      </div>
     </footer>
   )
 }
