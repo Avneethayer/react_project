@@ -59,7 +59,52 @@ function Menu() {
   return (
     <main className="menu">
       <h2>Our Menu</h2>
-      <Pizza />
+      <div className="Pizzas">
+        <Pizza
+          name="Focaccia"
+          ingredients="Bread with italian olive oil and rosemary"
+          price={6}
+          photoName="pizzas/focaccia.jpg"
+          imageText="focaccia pizza"
+        />
+        <Pizza
+          name="Pizza Margherita"
+          ingredients="Tomato and mozarella"
+          price={10}
+          photoName="pizzas/margherita.jpg"
+          imageText="Pizza Margharita "
+        />
+        <Pizza
+          name="Pizza Spinaci"
+          ingredients="Tomato, mozarella, spinach, and ricotta cheese"
+          price={12}
+          photoName="pizzas/spinaci.jpg"
+          imageText="Pizza Spinaci"
+        />
+        <Pizza
+          name="Pizza Funghi"
+          ingredients="Tomato, mozarella, mushrooms, and onion"
+          price={12}
+          photoName="pizzas/funghi.jpg"
+          imageText="Pizza Funghi"
+        />
+
+        <Pizza
+          name="Pizza Salamino"
+          ingredients="Tomato, mozarella, and pepperoni"
+          price={15}
+          photoName="pizzas/salamino.jpg"
+          imageText="Pizza Salamino"
+        />
+
+        <Pizza
+          name="Pizza Prosciutto"
+          ingredients="Tomato, mozarella, ham, aragula, and burrata cheese"
+          price={18}
+          photoName="pizzas/prosciutto.jpg"
+          imageText="Pizza Prosciutto"
+        />
+      </div>
     </main>
   )
 }
@@ -77,12 +122,15 @@ function Footer() {
   )
 }
 
-function Pizza() {
+function Pizza(props) {
   return (
-    <div>
-      <img src="pizzas/focaccia.jpg" alt="focaccia pizza" />
-      <h3>Focaccia</h3>
-      <p>Bread with italian olive oil and rosemary</p>
+    <div className="pizza">
+      <img src={props.photoName} alt={props.imageText} />
+      <div>
+        <h3>{props.name}</h3>
+        <p>{props.ingredients}</p>
+      </div>
+      <div>{props.price}</div>
     </div>
   )
 }
