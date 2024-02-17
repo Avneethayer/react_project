@@ -126,25 +126,36 @@ function Footer() {
   return (
     <footer className="footer">
       {/* {new Date().toLocaleDateString()} We are open! */}
-      <div className="order">
-        {isOpen
-          ? `We are Open until ${closeHour}.00. Come visit us!`
-          : `We are closed right now. Please come between ${openHour}.00 and ${closeHour}.00`}
-        <button className="btn">Order</button>
-      </div>
+
+      {isOpen ? (
+        <Order closeHour={closeHour} />
+      ) : (
+        <p>
+          We are closed right now. Please come between ${openHour}.00 and $
+          {closeHour}.00
+        </p>
+      )}
     </footer>
   )
 }
 
-function Pizza(props) {
-  if (props.pizzaObj.soldOut) return null
+function Order({ closeHour }) {
+  return (
+    <div className="order">
+      <p>We are Open until {closeHour}.00. Come visit us!</p>
+      <button className="btn">Order</button>
+    </div>
+  )
+}
+function Pizza({ pizzaObj }) {
+  if (pizzaObj.soldOut) return null
   return (
     <li className="pizza">
-      <img src={props.pizzaObj.photoName} alt={props.pizzaObj.imageText} />
+      <img src={pizzaObj.photoName} alt={pizzaObj.imageText} />
       <div>
-        <h3>{props.pizzaObj.name}</h3>
-        <p>{props.pizzaObj.ingredients}</p>
-        <span>{props.pizzaObj.price}</span>
+        <h3>{pizzaObj.name}</h3>
+        <p>{pizzaObj.ingredients}</p>
+        <span>{pizzaObj.price}</span>
       </div>
     </li>
   )
