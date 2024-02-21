@@ -41,3 +41,18 @@
 div > .active {
   background-color: blueviolet;
 }
+
+.close {
+  background-color: #f33;
+  border: none;
+  border-radius: 50%;
+  padding: 8px 10px;
+  font-size: large;
+  position: fixed;
+  right: 0;
+  margin: 10px;
+}
+
+.close:hover {
+  background-color: #f00;
+}
