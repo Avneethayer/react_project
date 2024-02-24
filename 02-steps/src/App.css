@@ -1,0 +1,58 @@
+.steps {
+  margin: 10px auto;
+  width: 400px;
+  background-color: #eee;
+  display: flex;
+  flex-direction: column;
+  padding: 20px;
+}
+
+.numbers,
+.buttons {
+  display: flex;
+  justify-content: space-around;
+}
+
+.numbers > div {
+  border-radius: 50%;
+  padding: 10px 15px;
+  background-color: #999;
+  color: #fff;
+}
+
+.content {
+  margin: 30px auto;
+  font-weight: bold;
+}
+
+.buttons {
+  /* margin: 0 auto; */
+}
+
+.buttons > button {
+  background-color: blueviolet;
+  border: none;
+  border-radius: 30px;
+  color: #fff;
+  padding: 8px 12px;
+  cursor: pointer;
+}
+
+div > .active {
+  background-color: blueviolet;
+}
+
+.close {
+  background-color: #f33;
+  border: none;
+  border-radius: 50%;
+  padding: 8px 10px;
+  font-size: large;
+  position: fixed;
+  right: 0;
+  margin: 10px;
+}
+
+.close:hover {
+  background-color: #f00;
+}
