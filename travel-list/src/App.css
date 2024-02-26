@@ -18,14 +18,29 @@ body {
 }
 
 .list {
-  background-color: lightsalmon;
+  background-color: maroon;
   height: 80vh;
+  color: #fff;
 }
 
 .list_heading {
   text-align: center;
   margin: 0;
   padding: 5px;
+}
+
+.list_item {
+  display: flex;
+}
+.list_item li {
+  list-style: none;
+  padding: 20px;
+  font-size: 1.5rem;
+  margin-right: 20px;
+}
+
+.not_packed {
+  text-decoration: line-through;
 }
 
 .stats {
