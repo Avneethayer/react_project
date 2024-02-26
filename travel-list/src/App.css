@@ -15,6 +15,24 @@ body {
   padding: 10px;
   text-align: center;
   font-size: 1.2rem;
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-around;
+}
+
+.form h3 {
+  margin: 0;
+}
+
+.form_elements {
+  margin-right: 10px;
+  padding: 5px;
+  border-radius: 5px;
+  border: none;
+}
+
+.form button {
+  background-color: aquamarine;
 }
 
 .list {
