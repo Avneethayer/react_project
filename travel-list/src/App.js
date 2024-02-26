@@ -10,19 +10,25 @@ export default function App() {
 }
 
 function Logo() {
-  return <h1>🌴Far Away💼</h1>
+  return <h1 className="logo">🌴 Far Away 💼</h1>
 }
 
 function Form() {
-  return <div>What do you need for your 😍 trip</div>
+  return <div className="form">What do you need for your 😍 trip</div>
 }
 
 function PackingList() {
-  return <div>List</div>
+  return (
+    <div className="list">
+      <h2 className="list_heading">List</h2>
+    </div>
+  )
 }
 
 function Stats() {
   return (
-    <div>💼 You have X items on your list, and you already packed X (X%)</div>
+    <div className="stats">
+      💼 You have X items on your list, and you already packed X (X%)
+    </div>
   )
 }
