@@ -24,16 +24,19 @@ function Logo() {
 function Form() {
   const [description, setDescription] = useState("")
   const [quantity, setQuantity] = useState(1)
+  const [items, setItems] = useState([])
 
   function handleSubmit(e) {
     e.preventDefault()
 
     if (!description) return
     const newItem = { description, quantity, packed: false, id: Date.now() }
+
+    setItems((items) => [...items, newItem])
     console.log(newItem)
 
     setDescription("")
-    setQuantity()
+    setQuantity(1)
   }
 
   return (
