@@ -19,8 +19,8 @@ export default function App() {
 
   function handleToggleItems(id) {
     setItems((items) =>
-      items.map(
-        (item) => (item.id = id ? { ...item, packed: !item.packed } : item)
+      items.map((item) =>
+        item.id == id ? { ...item, packed: !item.packed } : item
       )
     )
   }
@@ -34,7 +34,7 @@ export default function App() {
         onDeleteItems={handleDeleteItems}
         onToggleItems={handleToggleItems}
       />
-      <Stats />
+      <Stats items={items} />
     </div>
   )
 }
@@ -54,7 +54,6 @@ function Form({ onAddItems }) {
     const newItem = { description, quantity, packed: false, id: Date.now() }
 
     onAddItems(newItem)
-    console.log(newItem)
 
     setDescription("")
     setQuantity(1)
@@ -125,10 +124,21 @@ function Item({ item, onDeleteItems, onToggleItems }) {
   )
 }
 
-function Stats() {
+function Stats({ items }) {
+  if (!items.length) {
+    return <div className="stats">Start adding items to the list</div>
+  }
+
+  const numItems = items.length
+  const itemsPacked = items.filter((item) => item.packed).length
+  const packedPercent = Math.round((itemsPacked / numItems) * 100)
+
   return (
     <div className="stats">
-      💼 You have X items on your list, and you already packed X (X%)
+      {packedPercent == 100
+        ? "You are fully packed"
+        : `💼 You have ${numItems} items on your list, and you already packed"
+      ${itemsPacked} item ${packedPercent}%}`}
     </div>
   )
 }
